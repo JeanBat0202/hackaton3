@@ -1,14 +1,7 @@
-import Home from "./pages/Home";
-
-import "./App.css";
+import Connexion from "./pages/Connexion";
 
 function App() {
-  return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
-  );
+  return <Connexion />;
 }
 
 export default App;
