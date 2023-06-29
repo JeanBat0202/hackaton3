@@ -40,7 +40,7 @@ export default function Login() {
         .then((data) => {
           console.warn(data);
           dispatch({ type: "SET_USER", payload: data });
-          navigate(`/acceuil`);
+          navigate(`/accueil`);
         })
         .catch(() => {
           alert("Error to login, please try again!!!");
