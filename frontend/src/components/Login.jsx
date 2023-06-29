@@ -5,8 +5,7 @@ import "./login.css";
 // import { useUserContext } from "../contexts/UserContext";
 
 export default function Login() {
-  //   const { setIdPatient, setIdDoctor, setRole } = useUserContext();
-  //   const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
   const [identifiant, setIdentifiant] = useState("");
   const [password, setPassword] = useState("");
@@ -21,49 +20,38 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //     // Ici vous pouvez effectuer une action telle qu'envoyer les données à un serveur
-    //     if (!mail || !password) {
-    //       // alert("You must provide an email and a password !");
-    //     } else {
-    //       fetch(`${import.meta.env.VITE_BACKEND_URL}/api/${utilisateur}/login`, {
-    //         method: "POST",
-    //         credentials: "include",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //           mail,
-    //           password,
-    //         }),
+    //   // Ici vous pouvez effectuer une action telle qu'envoyer les données à un serveur
+    //   if (!identifiant || !password) {
+    //     // alert("You must provide an email and a password !");
+    //   } else {
+    //     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/${employe}/login`, {
+    //       method: "POST",
+    //       credentials: "include",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         identifiant,
+    //         password,
+    //       }),
+    //     })
+    //       .then((res) => {
+    //         return res.json();
     //       })
-    //         .then((res) => {
-    //           return res.json();
-    //         })
-    //         .then((data) => {
-    //           console.warn(data.id);
-    //           navigate(`/${utilisateur}/${data.id}`);
-    //           if (utilisateur === "patients") {
-    //             setIdPatient(data.id);
-    //           } else {
-    //             setIdDoctor(data.id);
-    //           }
-    //           if (data.role) {
-    //             setRole(data.role);
-    //           }
-    //         })
-    //         .catch((err) => {
-    //           console.error(err);
-    //           // alert("Error to login please try again !");
-    //         });
+
+    //       .catch((err) => {
+    //         console.error(err);
+    //         alert("Error to login please try again !");
+    //       });
+    //   }
+    //   // Réinitialiser les valeurs du formulaire
+    //   setMail("");
+    //   setPassword("");
   };
-  // Réinitialiser les valeurs du formulaire
-  //     setMail("");
-  //     setPassword("");
-  //   };
 
   return (
     <div className="box">
-      <div className="titre">
+      <div className="connexion">
         <h1>Connexion</h1>
       </div>
 
@@ -109,7 +97,6 @@ export default function Login() {
               onClick={() => setPasswordIsVisible(!passwordIsVisible)}
               type="button"
               className="svg"
-              // "absolute right-2 bottom-1 fill-black"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -119,11 +106,7 @@ export default function Login() {
             </svg>
           )}
         </label>
-        <button
-          className="submit"
-          //   "mx-auto bg-rose-400 text-white font-bold text-2xl mt-14 rounded-lg w-40 h-10 md:w-52 md:h-12 "
-          type="submit"
-        >
+        <button className="submit" type="submit">
           Valider
         </button>
       </form>

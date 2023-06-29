@@ -1,11 +1,12 @@
 .box {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0%;
   justify-content: center;
+  align-items: center;
+  flex: 1 1 0%;
 }
 
-.titre {
+.connexion {
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -35,7 +36,7 @@ label.mdp {
 }
 
 label.id {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 label .svg {
