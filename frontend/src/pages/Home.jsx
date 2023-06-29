@@ -3,7 +3,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <>
+    <div className="scroll">
       <div className="titre">
         <h1>Commencer l'enregistrement de nouveaux téléphones</h1>
       </div>
@@ -19,7 +19,7 @@ function Home() {
         alt="telephone"
         className="image"
       />
-    </>
+    </div>
   );
 }
 
