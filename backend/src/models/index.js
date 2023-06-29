@@ -30,6 +30,10 @@ pool.getConnection().catch(() => {
 const models = {};
 
 const ItemManager = require("./ItemManager");
+const SmartphoneManager = require("./SmartphoneManager");
+
+models.smartphone = new SmartphoneManager();
+models.smartphone.setDatabase(pool);
 const EmployeManager = require("./EmployeManager");
 
 models.item = new ItemManager();

@@ -1,52 +1,51 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
 import "./login.css";
 // import PropTypes from "prop-types";
-// import { useNavigate } from "react-router-dom";
-// import { useUserContext } from "../contexts/UserContext";
 
 export default function Login() {
-  // const navigate = useNavigate();
+  const dispatch = useUserContext()[1];
+  const navigate = useNavigate();
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
-  const [identifiant, setIdentifiant] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleChangeIdentifiant = (e) => {
-    setIdentifiant(e.target.value);
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //   // Ici vous pouvez effectuer une action telle qu'envoyer les données à un serveur
-    //   if (!identifiant || !password) {
-    //     // alert("You must provide an email and a password !");
-    //   } else {
-    //     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/${employe}/login`, {
-    //       method: "POST",
-    //       credentials: "include",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         identifiant,
-    //         password,
-    //       }),
-    //     })
-    //       .then((res) => {
-    //         return res.json();
-    //       })
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    //       .catch((err) => {
-    //         console.error(err);
-    //         alert("Error to login please try again !");
-    //       });
-    //   }
-    //   // Réinitialiser les valeurs du formulaire
-    //   setMail("");
-    //   setPassword("");
+    if (!email || !password) {
+      alert("You must provide an email and a password!!!!");
+    } else {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employes/login`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.warn(data);
+          dispatch({ type: "SET_USER", payload: data });
+          navigate(`/acceuil`);
+        })
+        .catch(() => {
+          alert("Error to login, please try again!!!");
+        });
+    }
   };
 
   return (
@@ -54,19 +53,16 @@ export default function Login() {
       <div className="connexion">
         <h1>Connexion</h1>
       </div>
-
       <form className="form" name="connexion" onSubmit={handleSubmit}>
-        <label className="id">
-          <input
-            className="case identifiant"
-            placeholder="Identifiant"
-            type="text"
-            name="identifiant"
-            required
-            value={identifiant}
-            onChange={handleChangeIdentifiant}
-          />
-        </label>
+        <input
+          className="case identifiant"
+          placeholder="Adresse Mail"
+          type="text"
+          name="identifiant"
+          required
+          value={email}
+          onChange={handleChangeEmail}
+        />
 
         <label className="mdp">
           <input
@@ -113,4 +109,5 @@ export default function Login() {
     </div>
   );
 }
+
 // Connexion.propTypes = { utilisateur: PropTypes.string.isRequired };
