@@ -5,7 +5,7 @@ import "./login.css";
 // import { useUserContext } from "../contexts/UserContext";
 
 export default function Login() {
-  //   const { setIdPatient, setIdDoctor, setRole } = useUserContext();
+  //   const { setIdPatient } = useUserContext();
   //   const navigate = useNavigate();
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
   const [identifiant, setIdentifiant] = useState("");

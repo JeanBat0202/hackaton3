@@ -41,8 +41,11 @@
   list-style: none;
   height: 50px;
   width: 50px;
+  color: white;
 }
 
 .nav-menu-items {
   margin-top: 40px;
 }
+
+  
