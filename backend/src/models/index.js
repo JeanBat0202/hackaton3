@@ -34,9 +34,12 @@ const SmartphoneManager = require("./SmartphoneManager");
 
 models.smartphone = new SmartphoneManager();
 models.smartphone.setDatabase(pool);
+const EmployeManager = require("./EmployeManager");
 
 models.item = new ItemManager();
 models.item.setDatabase(pool);
+models.employe = new EmployeManager();
+models.employe.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
