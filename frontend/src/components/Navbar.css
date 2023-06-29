@@ -28,7 +28,7 @@
   justify-content: center;
   left: -100%;
   transition: 850ms;
-  opacity: 70%;
+  opacity: 90%;
 }
 
 .nav-menu.active {
