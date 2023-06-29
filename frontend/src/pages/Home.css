@@ -31,7 +31,11 @@
 .image {
   display: flex;
   width: 80%;
-  margin-left: 35px;
+  margin: auto;
+}
+
+.HelloSandrine {
+  color: #00acb0;
 }
 
 @media screen and (min-width: 768px) {
@@ -41,6 +45,5 @@
 
   .image {
     width: 30%;
-    margin-left: 35px;
   }
 }
