@@ -1,3 +1,9 @@
+.HelloSandrine {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .titre {
   display: flex;
   justify-content: center;
@@ -27,6 +33,11 @@
   background-color: #00acb0;
   color: white;
   border-radius: 59px;
+  border: none;
+}
+
+.identification {
+  text-decoration: none;
 }
 
 .image {
