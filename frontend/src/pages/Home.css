@@ -1,9 +1,10 @@
 .HelloSandrine {
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
   font-size: x-large;
   margin-top: 2rem;
-  color: #00ACB0;
+  color: #00acb0;
 }
 .titre {
   display: flex;
@@ -28,13 +29,16 @@
   font-size: 26px;
 }
 .blue-button {
-  background-color: #00ACB0;
+  background-color: #00acb0;
   color: white;
   border-radius: 59px;
+  border: none;
 }
+
 .identification {
   text-decoration: none;
 }
+
 .image {
   display: flex;
   width: 60%;

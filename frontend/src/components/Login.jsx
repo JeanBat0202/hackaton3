@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
 import "./login.css";
-// import PropTypes from "prop-types";
 
 export default function Login() {
   const dispatch = useUserContext()[1];
@@ -53,6 +52,7 @@ export default function Login() {
       <div className="connexion">
         <h1>Connexion</h1>
       </div>
+
       <form className="form" name="connexion" onSubmit={handleSubmit}>
         <input
           className="case identifiant"
