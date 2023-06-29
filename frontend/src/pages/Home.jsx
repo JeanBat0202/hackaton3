@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
 import { useUserContext } from "../context/UserContext";
+import "./Home.css";
 
 function Home() {
   const [{ user }] = useUserContext();
@@ -27,5 +27,4 @@ function Home() {
     </>
   );
 }
-
 export default Home;
