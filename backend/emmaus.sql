@@ -50,8 +50,9 @@ CREATE TABLE `employe` (
   `email` varchar(255) NOT NULL,
   `firstname` varchar(80) NOT NULL,
   `lastname` varchar(80) NOT NULL,
+  `role` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 /*!40101 SET character_set_client = @saved_cs_client */
 ;
@@ -72,7 +73,16 @@ VALUES
     '123456',
     'sandrine.martin@emmaus.fr',
     'Sandrine',
-    'Martin'
+    'Martin',
+    'User'
+  ),
+  (
+    2,
+    '$argon2id$v=19$m=65536,t=5,p=1$oZjdAYfx0cvU0Xk+xOoTMA$yRIseazldM4ZpDZYHytLrt83S95gKATJZMgnq1R+oqM',
+    'sandrine.dupont@emmaus.fr',
+    'Sandrine',
+    'Dupont',
+    'User'
   );
 
 /*!40000 ALTER TABLE `employe` ENABLE KEYS */
@@ -125,7 +135,7 @@ VALUES
     1,
     'frontend/src/assets/images/iphone6.jpg'
   ),
-(
+  (
     2,
     'samsung',
     'GalaxyA6',
@@ -134,7 +144,7 @@ VALUES
     3,
     'frontend/src/assets/images/SamsungGalaxy.webp'
   ),
-(
+  (
     3,
     'xiaomi',
     'RedmiNote7',
@@ -173,4 +183,4 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */
 ;
 
--- Dump completed on 2023-06-28 15:39:40
+-- Dump completed on 2023-06-29 12:35:41

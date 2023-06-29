@@ -7,11 +7,12 @@ class EmployeManager extends AbstractManager {
 
   insert(employe) {
     return this.database.query(
-      `INSERT INTO ${this.table} (firstname, lastname, email, hashedPassword) VALUES (?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (firstname, lastname, email, hashedPassword, role) VALUES (?, ?, ?, ?, ?)`,
       [
         employe.firstname,
         employe.lastname,
         employe.email,
+        employe.role,
         employe.hashedPassword,
       ]
     );
@@ -19,12 +20,13 @@ class EmployeManager extends AbstractManager {
 
   update(employe) {
     return this.database.query(
-      `UPDATE ${this.table} SET firstname = ?, lastname = ?, email = ?, hashedPassword = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET firstname = ?, lastname = ?, email = ?, hashedPassword = ?, role = ? WHERE id = ?`,
       [
         employe.firstname,
         employe.lastname,
         employe.email,
         employe.hashedPassword,
+        employe.role,
         employe.id,
       ]
     );
@@ -32,7 +34,7 @@ class EmployeManager extends AbstractManager {
 
   findAll() {
     return this.database.query(
-      `SELECT firstname, lastname, email FROM ${this.table} `
+      `SELECT firstname, lastname, email, role FROM ${this.table} `
     );
   }
 
