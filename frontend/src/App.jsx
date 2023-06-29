@@ -1,12 +1,14 @@
-import Navbar from "./components/Navbar";
-
 import "./App.css";
+import Connexion from "./pages/Connexion";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
-    </div>
+
+      <Connexion />
+    </>
   );
 }
 
