@@ -23,7 +23,7 @@
 }
 
 .blue-button {
-  background-color: #00ACB0;
+  background-color: #00acb0;
   color: white;
   border-radius: 59px;
 }
@@ -38,11 +38,9 @@
   body {
     overflow: hidden;
   }
-  
+
   .image {
     width: 30%;
     margin-left: 35px;
   }
 }
-
-  
