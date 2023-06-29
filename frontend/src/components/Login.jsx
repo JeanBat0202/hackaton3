@@ -1,96 +1,73 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
 import "./login.css";
 // import PropTypes from "prop-types";
-// import { useNavigate } from "react-router-dom";
-// import { useUserContext } from "../contexts/UserContext";
 
 export default function Login() {
-  //   const { setIdPatient } = useUserContext();
-  //   const navigate = useNavigate();
+  const dispatch = useUserContext()[1];
+  const navigate = useNavigate();
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
-  const [identifiant, setIdentifiant] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleChangeIdentifiant = (e) => {
-    setIdentifiant(e.target.value);
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //     // Ici vous pouvez effectuer une action telle qu'envoyer les données à un serveur
-    //     if (!mail || !password) {
-    //       // alert("You must provide an email and a password !");
-    //     } else {
-    //       fetch(`${import.meta.env.VITE_BACKEND_URL}/api/${utilisateur}/login`, {
-    //         method: "POST",
-    //         credentials: "include",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //           mail,
-    //           password,
-    //         }),
-    //       })
-    //         .then((res) => {
-    //           return res.json();
-    //         })
-    //         .then((data) => {
-    //           console.warn(data.id);
-    //           navigate(`/${utilisateur}/${data.id}`);
-    //           if (utilisateur === "patients") {
-    //             setIdPatient(data.id);
-    //           } else {
-    //             setIdDoctor(data.id);
-    //           }
-    //           if (data.role) {
-    //             setRole(data.role);
-    //           }
-    //         })
-    //         .catch((err) => {
-    //           console.error(err);
-    //           // alert("Error to login please try again !");
-    //         });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert("You must provide an email and a password!!!!");
+    } else {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employes/login`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.warn(data);
+          dispatch({ type: "SET_USER", payload: data });
+          navigate(`/acceuil`);
+        })
+        .catch(() => {
+          alert("Error to login, please try again!!!");
+        });
+    }
   };
-  // Réinitialiser les valeurs du formulaire
-  //     setMail("");
-  //     setPassword("");
-  //   };
 
   return (
     <div className="box">
-      <div className="titre">
+      <div className="connexion">
         <h1>Connexion</h1>
       </div>
       <form className="form" name="connexion" onSubmit={handleSubmit}>
-        {/* <label htmlFor="identifiant" className="identifiant">
-          Identifiant
-        </label> */}
         <input
           className="case identifiant"
-          placeholder="identifiant"
+          placeholder="Adresse Mail"
           type="text"
           name="identifiant"
           required
-          value={identifiant}
-          onChange={handleChangeIdentifiant}
+          value={email}
+          onChange={handleChangeEmail}
         />
 
-        {/* <label
-          className="mdp"
-          //   "font-bold text-white text-base mt-6"
-          htmlFor="password"
-        >
-          Mot de passe
-        </label> */}
         <label className="mdp">
           <input
             className="case mdp"
-            placeholder="mdp"
+            placeholder="Mot de passe"
             type={passwordIsVisible ? "text" : "password"}
             name="password"
             required
@@ -116,7 +93,6 @@ export default function Login() {
               onClick={() => setPasswordIsVisible(!passwordIsVisible)}
               type="button"
               className="svg"
-              // "absolute right-2 bottom-1 fill-black"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -126,15 +102,12 @@ export default function Login() {
             </svg>
           )}
         </label>
-        <button
-          className="submit"
-          //   "mx-auto bg-rose-400 text-white font-bold text-2xl mt-14 rounded-lg w-40 h-10 md:w-52 md:h-12 "
-          type="submit"
-        >
+        <button className="submit" type="submit">
           Valider
         </button>
       </form>
     </div>
   );
 }
+
 // Connexion.propTypes = { utilisateur: PropTypes.string.isRequired };

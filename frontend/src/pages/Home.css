@@ -24,7 +24,7 @@
 }
 
 .blue-button {
-  background-color: #00ACB0;
+  background-color: #00acb0;
   color: white;
   border-radius: 59px;
 }
@@ -36,14 +36,12 @@
 }
 
 @media screen and (min-width: 768px) {
-.scroll {
+  .scroll {
     overflow: hidden;
   }
-  
+
   .image {
     width: 30%;
     margin-left: 10rem;
   }
 }
-
-  

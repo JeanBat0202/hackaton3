@@ -19,14 +19,15 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
     optionsSuccessStatus: 200,
+    credentials: true,
   })
 );
 
 // import and mount the API routes
 
-const router = require("./router");
+const router = require("./routes");
 
-app.use(router);
+app.use("/api", router);
 
 // serve the `backend/public` folder for public resources
 
