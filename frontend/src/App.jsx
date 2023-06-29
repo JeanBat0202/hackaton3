@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Connexion from "./pages/Connexion";
 import Navbar from "./components/Navbar";
+import MobileSearch from "./components/MobileSearch";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Connexion />} />
-        <Route path="/acceuil" element={<Home />} />
+        <Route path="/accueil" element={<Home />} />
+        <Route path="/register" element={<MobileSearch />} />
       </Routes>
     </Router>
   );
