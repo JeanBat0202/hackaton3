@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
 import { useUserContext } from "../context/UserContext";
+import "./Home.css";
 
 function Home() {
   const [{ user }] = useUserContext();
   return (
-    <>
+    <div className="scroll">
       {user ? (
         <h1 className="HelloSandrine">Bonjour {user.firstname}</h1>
       ) : null}
@@ -13,7 +13,7 @@ function Home() {
         <h1>Commencer l'enregistrement de nouveaux téléphones</h1>
       </div>
       <div className="button-container">
-        <Link to="/register">
+        <Link className="identification" to="/register">
           <button type="button" className="blue-button">
             <p>Identification</p>
           </button>
@@ -24,8 +24,7 @@ function Home() {
         alt="telephone"
         className="image"
       />
-    </>
+    </div>
   );
 }
-
 export default Home;

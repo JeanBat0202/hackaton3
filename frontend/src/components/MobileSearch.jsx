@@ -46,7 +46,10 @@ export default function MobileSearch() {
   return (
     <section>
       <div className="specs-container">
-        <h2>Quelles sont les caractéristiques du téléphone ?</h2>
+        <h2 className="caracteristique">
+          Quelles sont les caractéristiques du téléphone ?
+        </h2>
+
         <form className="selectors">
           <label htmlFor="marque">Marque:</label>
           <select id="select" value={marque} onChange={handleMarque}>
@@ -120,6 +123,7 @@ export default function MobileSearch() {
             16
           </button>
         </div>
+
         <div id="etat">
           <h3>État du téléphone :</h3>
           <button type="button" value="Correct" onClick={handleEtat}>
@@ -132,6 +136,7 @@ export default function MobileSearch() {
             Très bon état
           </button>
         </div>
+
         <div className="container-buttons">
           <div id="retour">
             <button type="button">Retour</button>
