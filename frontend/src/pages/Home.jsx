@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+import { useUserContext } from "../context/UserContext";
 
 function Home() {
+  const [{ user }] = useUserContext();
   return (
-    <div className="scroll">
+    <>
+      {user ? (
+        <h1 className="HelloSandrine">Bonjour {user.firstname}</h1>
+      ) : null}
       <div className="titre">
         <h1>Commencer l'enregistrement de nouveaux téléphones</h1>
       </div>
@@ -19,7 +24,7 @@ function Home() {
         alt="telephone"
         className="image"
       />
-    </div>
+    </>
   );
 }
 
