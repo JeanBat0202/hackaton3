@@ -1,8 +1,11 @@
 import "./Home.css";
+import { useUserContext } from "../context/UserContext";
 
 function Home() {
+  const [{ user }] = useUserContext();
   return (
     <>
+      {user ? <h1>Bonjour {user.firstname}</h1> : null}
       <div className="titre">
         <h1>Commencer l'enregistrement de nouveaux téléphones</h1>
       </div>
