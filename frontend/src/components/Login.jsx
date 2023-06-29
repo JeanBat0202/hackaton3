@@ -66,31 +66,24 @@ export default function Login() {
       <div className="titre">
         <h1>Connexion</h1>
       </div>
-      <form className="form" name="connexion" onSubmit={handleSubmit}>
-        {/* <label htmlFor="identifiant" className="identifiant">
-          Identifiant
-        </label> */}
-        <input
-          className="case identifiant"
-          placeholder="identifiant"
-          type="text"
-          name="identifiant"
-          required
-          value={identifiant}
-          onChange={handleChangeIdentifiant}
-        />
 
-        {/* <label
-          className="mdp"
-          //   "font-bold text-white text-base mt-6"
-          htmlFor="password"
-        >
-          Mot de passe
-        </label> */}
+      <form className="form" name="connexion" onSubmit={handleSubmit}>
+        <label className="id">
+          <input
+            className="case identifiant"
+            placeholder="Identifiant"
+            type="text"
+            name="identifiant"
+            required
+            value={identifiant}
+            onChange={handleChangeIdentifiant}
+          />
+        </label>
+
         <label className="mdp">
           <input
             className="case mdp"
-            placeholder="mdp"
+            placeholder="Mot de passe"
             type={passwordIsVisible ? "text" : "password"}
             name="password"
             required

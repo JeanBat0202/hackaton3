@@ -1,20 +1,21 @@
 .headerContainer {
-  height: 48px;
-  background-color: #002743;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  height: 3rem;
+  background-color: #002743;
 }
 
 .logo {
-  height: 30px;
+  height: 25px;
+  margin-right: 1rem;
 }
 
 .imageBugerMenu {
   font-size: 5vh;
-  margin-top: 1vh;
-  position: relative;
   z-index: 2;
   color: white;
+  margin-left: 1rem;
 }
 
 .nav-menu {
@@ -37,10 +38,17 @@
 }
 
 .nav-text {
+  margin-top: 2rem;
+  margin-left: 1rem;
   font-size: 16px;
   list-style: none;
   height: 50px;
   width: 50px;
+  color: white;
+}
+
+.ajouter {
+  margin-top: 4rem;
 }
 
 .nav-menu-items {
