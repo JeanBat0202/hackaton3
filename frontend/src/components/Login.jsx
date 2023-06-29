@@ -50,16 +50,13 @@ export default function Login() {
 
   return (
     <div className="box">
-      <div className="titre">
+      <div className="connexion">
         <h1>Connexion</h1>
       </div>
       <form className="form" name="connexion" onSubmit={handleSubmit}>
-        {/* <label htmlFor="identifiant" className="identifiant">
-          Identifiant
-        </label> */}
         <input
           className="case identifiant"
-          placeholder="identifiant"
+          placeholder="Adresse Mail"
           type="text"
           name="identifiant"
           required
@@ -67,17 +64,10 @@ export default function Login() {
           onChange={handleChangeEmail}
         />
 
-        {/* <label
-          className="mdp"
-          //   "font-bold text-white text-base mt-6"
-          htmlFor="password"
-        >
-          Mot de passe
-        </label> */}
         <label className="mdp">
           <input
             className="case mdp"
-            placeholder="mdp"
+            placeholder="Mot de passe"
             type={passwordIsVisible ? "text" : "password"}
             name="password"
             required
@@ -103,7 +93,6 @@ export default function Login() {
               onClick={() => setPasswordIsVisible(!passwordIsVisible)}
               type="button"
               className="svg"
-              // "absolute right-2 bottom-1 fill-black"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -113,15 +102,12 @@ export default function Login() {
             </svg>
           )}
         </label>
-        <button
-          className="submit"
-          //   "mx-auto bg-rose-400 text-white font-bold text-2xl mt-14 rounded-lg w-40 h-10 md:w-52 md:h-12 "
-          type="submit"
-        >
+        <button className="submit" type="submit">
           Valider
         </button>
       </form>
     </div>
   );
 }
+
 // Connexion.propTypes = { utilisateur: PropTypes.string.isRequired };
