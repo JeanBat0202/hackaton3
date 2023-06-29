@@ -1,65 +1,52 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
 import "./login.css";
 // import PropTypes from "prop-types";
-// import { useNavigate } from "react-router-dom";
-// import { useUserContext } from "../contexts/UserContext";
 
 export default function Login() {
-  //   const { setIdPatient, setIdDoctor, setRole } = useUserContext();
-  //   const navigate = useNavigate();
+  const dispatch = useUserContext()[1];
+  const navigate = useNavigate();
   const [passwordIsVisible, setPasswordIsVisible] = useState(false);
-  const [identifiant, setIdentifiant] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleChangeIdentifiant = (e) => {
-    setIdentifiant(e.target.value);
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //     // Ici vous pouvez effectuer une action telle qu'envoyer les données à un serveur
-    //     if (!mail || !password) {
-    //       // alert("You must provide an email and a password !");
-    //     } else {
-    //       fetch(`${import.meta.env.VITE_BACKEND_URL}/api/${utilisateur}/login`, {
-    //         method: "POST",
-    //         credentials: "include",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //           mail,
-    //           password,
-    //         }),
-    //       })
-    //         .then((res) => {
-    //           return res.json();
-    //         })
-    //         .then((data) => {
-    //           console.warn(data.id);
-    //           navigate(`/${utilisateur}/${data.id}`);
-    //           if (utilisateur === "patients") {
-    //             setIdPatient(data.id);
-    //           } else {
-    //             setIdDoctor(data.id);
-    //           }
-    //           if (data.role) {
-    //             setRole(data.role);
-    //           }
-    //         })
-    //         .catch((err) => {
-    //           console.error(err);
-    //           // alert("Error to login please try again !");
-    //         });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert("You must provide an email and a password!!!!");
+    } else {
+      fetch(`${import.meta.env.VITE_BACKEND_URL}/api/employes/login`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.warn(data);
+          dispatch({ type: "SET_USER", payload: data });
+          navigate(`/acceuil`);
+        })
+        .catch(() => {
+          alert("Error to login, please try again!!!");
+        });
+    }
   };
-  // Réinitialiser les valeurs du formulaire
-  //     setMail("");
-  //     setPassword("");
-  //   };
 
   return (
     <div className="box">
@@ -76,8 +63,8 @@ export default function Login() {
           type="text"
           name="identifiant"
           required
-          value={identifiant}
-          onChange={handleChangeIdentifiant}
+          value={email}
+          onChange={handleChangeEmail}
         />
 
         {/* <label
