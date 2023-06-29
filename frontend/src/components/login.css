@@ -1,6 +1,8 @@
 .box {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0%;
+  justify-content: center;
 }
 
 .titre {
@@ -23,10 +25,17 @@
   color: #c2c2c2;
 }
 
-.mdp {
-  font-weight: bold;
-  color: #c2c2c2;
-  margin-top: 10px;
+label.mdp {
+  position: relative;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+label .svg {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
 }
 
 .case {
@@ -34,20 +43,21 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  margin-bottom: 20px;
   width: 80%;
+}
+
+.case:focus-visible,
+.case:active {
+  border: none;
+}
+
+.mdp {
+  width: 100%;
 }
 
 .jsp {
   display: flex;
   width: 80%;
-}
-
-.svg {
-  position: absolute;
-  top: 170px;
-  right: 40px;
-  height: 20px;
 }
 
 .submit {

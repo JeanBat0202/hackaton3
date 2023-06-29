@@ -1,7 +1,15 @@
+import "./App.css";
 import Connexion from "./pages/Connexion";
+import Navbar from "./components/Navbar";
 
 function App() {
-  return <Connexion />;
+  return (
+    <>
+      <Navbar />
+
+      <Connexion />
+    </>
+  );
 }
 
 export default App;
