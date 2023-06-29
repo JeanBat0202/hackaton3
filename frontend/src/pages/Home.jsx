@@ -5,7 +5,7 @@ import "./Home.css";
 function Home() {
   const [{ user }] = useUserContext();
   return (
-    <>
+    <div className="scroll">
       {user ? (
         <h1 className="HelloSandrine">Bonjour {user.firstname}</h1>
       ) : null}
@@ -24,7 +24,7 @@ function Home() {
         alt="telephone"
         className="image"
       />
-    </>
+    </div>
   );
 }
 export default Home;
