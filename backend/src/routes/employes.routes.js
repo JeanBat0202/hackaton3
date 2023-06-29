@@ -1,11 +1,11 @@
 const router = require("express").Router();
 
-const patientControllers = require("../controllers/employeControllers");
+const employeControllers = require("../controllers/employeControllers");
 
-router.get("/", patientControllers.browse);
-router.get("/:id", patientControllers.read);
-router.put("/:id", patientControllers.edit);
-router.post("/", patientControllers.add);
-router.delete("/:id", patientControllers.destroy);
+router.get("/", employeControllers.browse);
+router.get("/:id", employeControllers.read);
+router.put("/:id", employeControllers.edit);
+router.post("/", employeControllers.add);
+router.delete("/:id", employeControllers.destroy);
 
 module.exports = router;
