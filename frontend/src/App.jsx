@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Connexion from "./pages/Connexion";
 import Navbar from "./components/Navbar";
 import MobileSearch from "./components/MobileSearch";
+import ResultSearch from "./components/ResultSearch";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Connexion />} />
         <Route path="/accueil" element={<Home />} />
         <Route path="/register" element={<MobileSearch />} />
+        <Route path="/result" element={<ResultSearch />} />
       </Routes>
     </Router>
   );

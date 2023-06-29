@@ -48,7 +48,7 @@ class SmartphoneManager extends AbstractManager {
 
   findAll() {
     return this.database.query(
-      `SELECT brand, model, status, storage, ram, image FROM ${this.table}`
+      `SELECT id, brand, model, status, storage, ram, image FROM ${this.table}`
     );
   }
 }
