@@ -10,6 +10,7 @@
 //   const [stockage, setStockage] = useState("");
 //   const [ram, setRam] = useState("");
 //   const [etat, setEtat] = useState("");
+//   const [image, setImage] = useState("");
 
 //   return (
 //     <DataContext.Provider
@@ -24,6 +25,8 @@
 //         setRam,
 //         etat,
 //         setEtat,
+//         image,
+//         setImage,
 //       }}
 //     >
 //       {children}
