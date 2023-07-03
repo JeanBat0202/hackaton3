@@ -75,8 +75,8 @@ export default function MobileSearch() {
             <option value="Bleu">Bleu</option>
           </select>
         </form>
-        <div id="capacite-stockage">
-          <h3>Choisissez une capacité de stockage :</h3>
+        <div id="caracteristiques">
+          <h3>Capacité de stockage</h3>
           <button type="button" value="8" onClick={handleStockage}>
             8Go
           </button>
@@ -96,8 +96,8 @@ export default function MobileSearch() {
             256Go
           </button>
         </div>
-        <div id="ram">
-          <h3>Choisissez la RAM du téléphone :</h3>
+        <div id="caracteristiques">
+          <h3>RAM</h3>
           <button type="button" value="1" onClick={handleRam}>
             1
           </button>
@@ -125,7 +125,7 @@ export default function MobileSearch() {
         </div>
 
         <div id="etat">
-          <h3>État du téléphone :</h3>
+          <h3>État du téléphone</h3>
           <button type="button" value="Correct" onClick={handleEtat}>
             Correct
           </button>
@@ -138,12 +138,15 @@ export default function MobileSearch() {
         </div>
 
         <div className="container-buttons">
-          <div id="retour">
-            <button type="button">Retour</button>
-          </div>
+          <button id="retour" type="button">
+            Retour
+          </button>
+
           <div id="validation">
             <Link to="/result">
-              <button type="button">Valider</button>
+              <button id="valider" type="button">
+                Valider
+              </button>
             </Link>
           </div>
         </div>

@@ -1,0 +1,52 @@
+.general {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.tel {
+  margin-left: 1rem;
+  margin-bottom: 4rem;
+  margin-top: 16rem;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.telcapacite {
+  font-weight: 300;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.stockage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.raminage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#check {
+  height: 27px;
+}
+
+#etattel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #002743;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 20px;
+  font-weight: 300;
+  font-size: 14px;
+}
